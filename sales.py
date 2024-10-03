@@ -65,7 +65,9 @@ st.pyplot(plt)
 # Add a bar chart showing the total quantity sold per year for the selected item
 st.subheader("Year-wise Sales Comparison")
 plt.figure(figsize=(10, 5))
-sns.barplot(x='Year', y='Counts', data=yearly_sales, palette='Blues_d')
+
+# Updated usage of 'hue' to avoid FutureWarning
+sns.barplot(x='Year', y='Counts', data=yearly_sales, hue='Year', palette='Blues_d', legend=False)
 
 plt.title(f'Sales Comparison for {item} across Years', fontsize=16, color="#2C3E50")
 plt.xlabel('Year', fontsize=12)
